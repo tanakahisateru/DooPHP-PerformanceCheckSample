@@ -5,7 +5,7 @@
  * Access via Singleton, eg. Doo::conf()->BASE_PATH;
  */
 error_reporting(E_ALL | E_STRICT);
-date_default_timezone_set('Asia/Kuala_Lumpur');
+date_default_timezone_set('Asia/Tokyo');
 
 /**
  * for benchmark purpose, call Doo::benchmark() for time used.
@@ -24,7 +24,8 @@ $config['APP_MODE'] = 'dev';
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
 
-$config['SUBFOLDER'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\','/',$config['SITE_PATH']));
+//$config['SUBFOLDER'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\','/',$config['SITE_PATH']));
+$config['SUBFOLDER'] = '/sites/doophp/app/';
 if(strpos($config['SUBFOLDER'], '/')!==0){
 	$config['SUBFOLDER'] = '/'.$config['SUBFOLDER'];
 }
