@@ -3,7 +3,7 @@
 //register global/PHP functions to be used with your template files
 //You can move this to common.conf.php   $config['TEMPLATE_GLOBAL_TAGS'] = array('isset', 'empty');
 //Every public static methods in TemplateTag class (or tag classes from modules) are available in templates without the need to define in TEMPLATE_GLOBAL_TAGS 
-Doo::conf()->TEMPLATE_GLOBAL_TAGS = array('upper', 'tofloat', 'sample_with_args', 'debug', 'url', 'url2', 'function_deny', 'isset', 'empty');
+Doo::conf()->TEMPLATE_GLOBAL_TAGS = array('h', 'h_nl2br', 'upper', 'tofloat', 'sample_with_args', 'debug', 'url', 'url2', 'function_deny', 'isset', 'empty');
 
 /**
 Define as class (optional)
@@ -13,6 +13,14 @@ class TemplateTag {
     public static test2(){}
 }
 **/
+
+function h($str){
+    return htmlspecialchars($str);
+}
+
+function h_nl2br($str){
+    return nl2br(htmlspecialchars($str));
+}
 
 function upper($str){
     return strtoupper($str);
