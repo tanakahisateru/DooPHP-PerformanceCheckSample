@@ -25,7 +25,7 @@ $config['APP_MODE'] = 'dev';
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
 
 //$config['SUBFOLDER'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\','/',$config['SITE_PATH']));
-$config['SUBFOLDER'] = '/sites/doophp/app/';
+$config['SUBFOLDER'] = dirname($_SERVER['PHP_SELF']) . '/';
 if(strpos($config['SUBFOLDER'], '/')!==0){
 	$config['SUBFOLDER'] = '/'.$config['SUBFOLDER'];
 }
