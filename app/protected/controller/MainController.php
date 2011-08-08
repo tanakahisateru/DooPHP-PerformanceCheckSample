@@ -10,16 +10,16 @@ class MainController extends DooController{
 				'limit'=>20
 			)),
 		));
-    }
+	}
 
 	/**
-	 *  immediate query
+	 *	immediate query
 	 */
 	public function immediate()
 	{
 		$post = Doo::db()->getOne('Post', array(
-		    'where' => 'id=?',
-		    'param' => array($this->params['postid']),
+			'where' => 'id=?',
+			'param' => array($this->params['postid']),
 		));
 		//render
 		$this->render('detail', array(
@@ -28,7 +28,7 @@ class MainController extends DooController{
 	}
 	
 	/**
-	 *  sample object based query
+	 *	sample object based query
 	 */
 	public function sample()
 	{
@@ -45,10 +45,10 @@ class MainController extends DooController{
 		$this->render('detail', array(
 			'post'=>$post,
 		));
-    }
-    
+	}
+	
 	/**
-	 *  DooModel inherited
+	 *	DooModel inherited
 	 */
 	public function model1()
 	{
@@ -64,7 +64,7 @@ class MainController extends DooController{
 	}
 	
 	/**
-	 *  DooSmartModel inherited (cached in protected/cache) *PHP5.3
+	 *	DooSmartModel inherited (cached in protected/cache) *PHP5.3
 	 */
 	public function model2()
 	{
@@ -81,7 +81,7 @@ class MainController extends DooController{
 	}
 	
 	/**
-	 *  DooSmartModel inherited (cache cleared each times) *PHP5.3
+	 *	DooSmartModel inherited (cache cleared each times) *PHP5.3
 	 */
 	public function model2nocache()
 	{
