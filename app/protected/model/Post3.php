@@ -1,6 +1,7 @@
 <?php
+Doo::loadCore('db/DooModel');
 
-class Post {
+class Post3 extends DooSmartModel {
     public $id;
     public $name;
     public $text;
@@ -10,4 +11,8 @@ class Post {
     public $_table = 'tbl_post';
     public $_primarykey = 'id';
     public $_fields = array('id', 'name', 'text', 'created', 'modified');
+
+    function __construct() {
+        parent::$className = __CLASS__;
+    }
 }

@@ -1,5 +1,11 @@
 <ul>
 <!-- loop posts -->
-<li><a href="{{posts' value.@id}}">{{posts' value.@id}}</a> {{posts' value.@name}}</li>
+<li>{{posts' value.@id}} {{posts' value.@name}} Query:
+  <a href="immediate/{{posts' value.@id}}">immediate</a>
+  <a href="sample/{{posts' value.@id}}">sample</a>
+  <a href="model1/{{posts' value.@id}}">model</a>
+  <a href="model2/{{posts' value.@id}}">smart model</a>
+  <a href="model2nocache/{{posts' value.@id}}">smart model(nocache)</a>
+</li>
 <!-- endloop -->
 </ul>

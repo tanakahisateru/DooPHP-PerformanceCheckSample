@@ -55,7 +55,11 @@
  */
  
 $route['*']['/'] = array('MainController', 'index');
-$route['*']['catchall']['/:postid'] = array('MainController', 'detail');
+$route['*']['catchall']['/immediate/:postid'] = array('MainController', 'immediate');
+$route['*']['catchall']['/sample/:postid'] = array('MainController', 'sample');
+$route['*']['catchall']['/model1/:postid'] = array('MainController', 'model1');
+$route['*']['catchall']['/model2/:postid'] = array('MainController', 'model2');
+$route['*']['catchall']['/model2nocache/:postid'] = array('MainController', 'model2nocache');
 $route['*']['/error'] = array('ErrorController', 'index');
 
 ?>
